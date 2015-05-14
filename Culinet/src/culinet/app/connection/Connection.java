@@ -24,12 +24,13 @@ public class Connection {
 	
 	public void openConnection(){
 		
-		connParams = new ConnectionParameters();
-		
-		setDatabase(connParams.getDatabase());
-		setUser(connParams.getUsername());
-		setPassword(connParams.getPassword());
-		setServer(connParams.getServer());
+		setConnParams();
+				
+		setDatabase(getConnParams().getDatabase());
+		setUser(getConnParams().getUsername());
+		setPassword(getConnParams().getPassword());
+		setServer(getConnParams().getServer());
+		setPort(getConnParams().getPort());
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -105,7 +106,7 @@ public class Connection {
 		return status;
 	}
 	
-	public boolean testConnection(String database, String user, String passwd, String server) {
+	public boolean testConnection(String database, String user, String passwd, String server, String port) {
 		
 		java.sql.Connection testConn = null;
 		
@@ -125,7 +126,7 @@ public class Connection {
 		if(testConn != null) {
 			try {
 				setStatus(true);
-				setMessage("ConexiÃ³n correcta");
+				setMessage("Conexión correcta");
 				testConn.close();
 			}
 			catch(Exception e) {
@@ -150,7 +151,9 @@ public class Connection {
 		return connParams;
 	}
 
-	public void setConnParams(ConnectionParameters connParams) {
+	public void setConnParams() {
+		ConnectionParameters connParams = new ConnectionParameters();
+		
 		this.connParams = connParams;
 	}
 
@@ -183,7 +186,7 @@ public class Connection {
 	}
 
 	public static void setServer(String server) {
-		server = "jdbc:mysql://" + server + "/" + getDatabase();
+		server = "jdbc:mysql://" + server + ":" + getPort() + "/" + getDatabase();
 		Connection.server = server;
 	}
 
@@ -201,6 +204,14 @@ public class Connection {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public static String getPort() {
+		return port;
+	}
+
+	public static void setPort(String port) {
+		Connection.port = port;
 	}
 	
 	

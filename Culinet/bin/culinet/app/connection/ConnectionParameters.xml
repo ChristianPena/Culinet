@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <connection>
-	<parameters id="1">
+	<parameters>
 		<server>localhost</server>
 		<port>6606</port>
 		<database>Culinet_Test</database>
