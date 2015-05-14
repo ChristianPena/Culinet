@@ -1,7 +1,13 @@
 package culinet.app.connection;
 
+import java.io.File;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -85,28 +91,38 @@ public class ConnectionParameters {
 				switch(element.getNodeName()){
 				
 				case "server":
-					setServer(element.getTextContent());
+					element.setTextContent(server);
 					break;
 				
 				case "port":
-					setPort(element.getTextContent());
+					element.setTextContent(port);
 					break;
 				
 				case "database":
-					setDatabase(element.getTextContent());
+					element.setTextContent(database);
 					break;
 				
 				case "username":
-					setUsername(element.getTextContent());
+					element.setTextContent(username);
 					break;
 				
 				case "password":
-					setPassword(element.getTextContent());
+					element.setTextContent(password);
 					break;			
 				
-				}
+				}				 
 				
-			}			
+			}	
+			
+			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			 
+			Transformer transformer = transformerFactory.newTransformer();
+			 
+			DOMSource domSource = new DOMSource(document);
+			 
+			StreamResult streamResult = new StreamResult(new File(xmlFilePath));
+			 
+			transformer.transform(domSource, streamResult);
 			
 		}catch(Exception e){
 			System.out.println(e.getClass().getName() + ": " + e.getMessage() );			
