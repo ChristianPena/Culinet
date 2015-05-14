@@ -1,0 +1,10 @@
+<?xml version="1.0">
+<connection>
+	<parameters>
+		<server></server>
+		<port></port>
+		<database></database>
+		<username>root</username>
+		<password></password>		
+	</parameters>
+</connection>

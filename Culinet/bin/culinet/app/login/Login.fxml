@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import org.controlsfx.glyphfont.*?>
+<?import org.controlsfx.control.textfield.CustomTextField ?>
+<?import org.controlsfx.control.textfield.CustomPasswordField ?>
+
+<BorderPane maxHeight="320.0" maxWidth="600.0" minHeight="320.0" minWidth="600.0" prefHeight="320.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="culinet.app.login.LoginController">
+   <center>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" styleClass="login-center-pane" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="25.0" layoutY="41.0" styleClass="login-label-field" text="Nombre de Usuario" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="30.0">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="93.0" styleClass="login-label-field" text="Clave de Acceso" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="90.0">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <CustomTextField fx:id="inputName" layoutX="181.0" layoutY="26.0" onAction="#handleActionAccess" prefHeight="25.0" prefWidth="250.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="26.0">
+            	<styleClass>
+                	<String fx:value="login-input-username" />
+                  	<String fx:value="login-input" />
+            	</styleClass>
+            </CustomTextField>
+            <CustomPasswordField fx:id="inputPassword" layoutX="200.0" layoutY="86.0" onAction="#handleActionAccess" prefHeight="25.0" prefWidth="250.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="86.0">
+               <styleClass>
+                  <String fx:value="login-input-password" />
+                  <String fx:value="login-input" />
+               </styleClass>
+            </CustomPasswordField>
+            <Button fx:id="actionCancel" layoutX="524.0" layoutY="161.0" maxHeight="30.0" maxWidth="110.0" minHeight="30.0" minWidth="110.0" mnemonicParsing="false" onAction="#handleActionCancel" prefHeight="30.0" prefWidth="110.0" text="Cancelar" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
+               <styleClass>
+                  <String fx:value="login-button" />
+                  <String fx:value="login-button-cancel" />
+               </styleClass></Button>
+            <Button fx:id="actionAccess" layoutX="416.0" layoutY="153.0" maxHeight="30.0" maxWidth="110.0" minHeight="30.0" minWidth="110.0" mnemonicParsing="false" onAction="#handleActionAccess" prefHeight="30.0" prefWidth="110.0" text="Acceder" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="130.0">
+               <styleClass>
+                  <String fx:value="login-button" />
+                  <String fx:value="login-button-access" />                  
+               </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <Pane maxHeight="30.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" styleClass="login-bottom-pane" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="message">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" top="5.0" />
+               </padding>
+            </Label>
+         </children></Pane>
+   </bottom>
+   <top>
+      <AnchorPane prefHeight="100.0" prefWidth="200.0" styleClass="login-top-pane" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="logoView" fitHeight="95.0" fitWidth="247.0" layoutX="372.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0" />
+            <Label layoutX="9.0" layoutY="26.0" styleClass="login-label-title" text="Acceso de Usuario" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="32.0">
+               <font>
+                  <Font name="DejaVu Sans ExtraLight" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

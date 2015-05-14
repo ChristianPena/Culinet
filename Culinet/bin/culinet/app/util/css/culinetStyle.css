@@ -1,0 +1,178 @@
+.toolbar{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-background-color: #FDFDFD;
+	-fx-border-color: #FDFDFD #858585 #858585 #FDFDFD;
+	-fx-border-weight: 0 1 1 0;
+	-fx-border-radius: 0 0 5 0;
+}
+
+.toolbar Button{
+	-fx-padding: 0;
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+	-fx-padding: 10,0,10,0;
+	-fx-font-weight: bold;
+}
+
+.toolbar Button:hover{	
+	-fx-border-color: #858585 #858585 #FDFDFD #858585;
+	-fx-border-weight: 1;
+	-fx-border-radius: 5 5 0 0;
+	-fx-background-color: #FDFDFD;	 
+}
+
+.top-titlebar {
+	-fx-min-height: 38;
+	-fx-max-height: 38;
+	-fx-background-color: #FDFDFD;
+}
+
+.logo-mainscreen{
+	-fx-padding: 0 10 0 0;	
+	-fx-border: 0 0 1 0;
+	-fx-background-color: #FDFDFD;
+	
+}
+
+.top-pane {
+	-fx-background-color: #FDFDFD;
+	-fx-border-color: #858585;
+	-fx-border-weight: 2;
+}
+
+.statusbar{
+	-fx-min-height: 25;
+	-fx-max-height: 25;
+}
+
+.titleText{
+	-fx-font-size: 22px;
+	-fx-font-family: Arial;
+}
+
+.login-top-pane{
+	-fx-background-color: #FFF;
+}
+
+.login-center-pane{
+	
+}
+
+.login-bottom-pane{
+	-fx-border-width: 1 0 0 0;
+	-fx-border-color: gray;
+}
+
+.login-label-title{
+	
+}
+
+.login-label-field{
+	
+}
+
+.login-input{
+	
+}
+
+.login-input-username{
+	
+	
+}
+
+.login-input-password{
+	
+}
+
+.login-icon-input{
+	-fx-text-fill: #B0B0B0;
+	-fx-padding: 0 10 0 0;
+}
+
+.login-button{
+	
+}
+
+.login-button-access{
+	-fx-text-fill: #FFF;
+	-fx-background-color: 
+		linear-gradient(rgba(30,87,153,1) 0%, rgba(41,137,216,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%);
+}
+
+.login-button-cancel{
+	-fx-text-fill: #4E4E4E;
+	
+}
+
+.login-message-error{
+	-fx-text-fill: red;
+}
+
+.login-message-warning{
+	-fx-text-fill: yellow;
+}
+
+/*TOOLBAR*/
+.toolbar-icon {
+	
+	
+}
+
+.toolbar-icon-back {
+	-fx-text-fill: radial-gradient(radius 100%, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+}
+
+.toolbar-icon-exit {
+	-fx-text-fill: radial-gradient(radius 100%, rgba(255,214,94,1) 0%, rgba(254,191,4,1) 100%);
+}
+
+.toolbar-icon-cancel {
+	-fx-text-fill: radial-gradient(radius 100%, rgba(255,48,25,1) 0%, rgba(207,4,4,1) 100%);
+}
+
+.toolbar-icon-save {
+	
+}
+
+.toolbar-icon-search {
+	-fx-text-fill: radial-gradient(radius 100%, rgba(44,83,158,1) 0%, rgba(44,83,158,1) 100%);
+}
+
+.toolbar-icon-print {
+	
+	
+}
+
+.toolbar-icon-info {
+	-fx-text-fill: radial-gradient(radius 100%, rgba(30,87,153,1) 0%, rgba(41,137,216,1) 50%);
+}
+
+.toolbar-icon-logout {
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
