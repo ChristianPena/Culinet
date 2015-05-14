@@ -6,20 +6,28 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
 public class ConnectionParameters {
+	
+	public static final String xmlFilePath = ConnectionParameters.class.getResource("ConnectionParameters.xml").getPath();
 	
 	private String database;
 	private String username;
 	private String password;
 	private String server;
+	private String port;
 
 	private Connection conn = null;
 
 	public ConnectionParameters() {
 
-		getConnectionData();
-		setConnectionData(conn);
-
+		getParamsFromFile();
 	}
 
 	public void getConnectionData() {
@@ -42,7 +50,7 @@ public class ConnectionParameters {
 		try {
 	
 			sql = "SELECT database, username, password, server "
-					+ "FROM connection_params;";				
+					+ "FROM connection_params;";
 	
 			Statement stmt = conn.createStatement();
 			ResultSet rs   = stmt.executeQuery(sql);
@@ -99,6 +107,55 @@ public class ConnectionParameters {
 	
 	}
 	
+	public void getParamsFromFile(){
+		
+		try{
+			DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+			Document document = documentBuilder.parse(xmlFilePath);
+			
+			Node parameters = document.getElementsByTagName("parameters").item(0);
+			
+			NodeList nodes =parameters.getChildNodes();
+			
+			for (int i = 0; i < nodes.getLength(); i++) {
+				
+				Node element = nodes.item(i);
+				
+				switch(element.getNodeName()){
+				
+				case "server":
+					setServer(element.getTextContent());
+					break;
+				
+				case "port":
+					setPort(element.getTextContent());
+					break;
+				
+				case "database":
+					setDatabase(element.getTextContent());
+					break;
+				
+				case "username":
+					setUsername(element.getTextContent());
+					break;
+				
+				case "password":
+					setPassword(element.getTextContent());
+					break;			
+				
+				}
+				
+			}			
+			
+		}catch(Exception e){
+			System.out.println("File: " + xmlFilePath);
+			System.out.println(e.getClass().getName() + ": " + e.getMessage() );
+			
+		}
+		
+	}
+	
 	public String getDatabase() {
 		return database;
 	}
@@ -130,11 +187,13 @@ public class ConnectionParameters {
 	public void setServer(String server) {
 		this.server = server;
 	}
-	
-	public void createTable() {
-	
-	//	String sql = "CREATE TABLE CONNECTION_PARAMS(DATABASE TEXT, USERNAME TEXT, PASSWORD TEXT, SERVER TEXT);";
-	
+
+	public String getPort() {
+		return port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
 	}
 	
 }
