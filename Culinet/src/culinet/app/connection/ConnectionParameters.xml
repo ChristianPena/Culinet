@@ -3,7 +3,7 @@
 	<parameters>
 		<server>localhost</server>
 		<port>6606</port>
-		<database>Culinet_Test</database>
+		<database>culinet_test</database>
 		<username>root</username>
 		<password></password>	
 	</parameters>

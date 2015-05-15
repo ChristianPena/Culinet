@@ -26,13 +26,11 @@ public class Connection {
 		
 		setConnParams();
 		
-		getConnParams().setParamsToFile("asdasd", "3306", "test", "user", "pass");
-				
-		/*setDatabase(getConnParams().getDatabase());
+		setDatabase(getConnParams().getDatabase());
 		setUser(getConnParams().getUsername());
 		setPassword(getConnParams().getPassword());
-		setServer(getConnParams().getServer());
-		setPort(getConnParams().getPort());*/
+		setPort(getConnParams().getPort());
+		setServer(getConnParams().getServer());		
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
