@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="culinet.app.sales.pos.POSController">
+   <top>
+      <ToolBar maxHeight="50.0" maxWidth="1.7976931348623157E308" minHeight="50.0" prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <items>
+            <Button minHeight="40.0" minWidth="150.0" mnemonicParsing="false" text="Dividir Cuenta" />
+            <Button minHeight="40.0" minWidth="150.0" mnemonicParsing="false" text="Enviar Pedido" />
+            <Button minHeight="40.0" minWidth="150.0" mnemonicParsing="false" text="Liberar Mesa" />
+            <Button minHeight="40.0" minWidth="150.0" mnemonicParsing="false" text="Anular" />
+            <Button minHeight="40.0" minWidth="150.0" mnemonicParsing="false" text="Nota de Credito" />
+            <Button minHeight="40.0" minWidth="150.0" mnemonicParsing="false" text="Pre Cuenta" />
+         </items></ToolBar>
+   </top>
+   <left>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="300.0" minWidth="300.0" prefHeight="300.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button minHeight="40.0" minWidth="300.0" mnemonicParsing="false" text="Pedido Rápido" />
+            <Button minHeight="40.0" minWidth="300.0" mnemonicParsing="false" text="Delivery" />
+            <TabPane fx:id="tabPaneFloors" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="368.0" prefWidth="300.0" tabClosingPolicy="UNAVAILABLE" />
+         </children></VBox>
+   </left>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </center>
+         <bottom>
+            <HBox maxHeight="250.0" maxWidth="1.7976931348623157E308" minHeight="250.0" prefHeight="250.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TreeView maxHeight="1.7976931348623157E308" maxWidth="300.0" minWidth="300.0" prefHeight="200.0" prefWidth="300.0" />
+                  <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="700.0" />
+               </children></HBox>
+         </bottom>
+         <right>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="300.0" minWidth="300.0" prefHeight="300.0" prefWidth="300.0" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </center>
+</BorderPane>

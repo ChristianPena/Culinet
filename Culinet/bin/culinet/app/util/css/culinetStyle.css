@@ -1,25 +1,29 @@
 .toolbar{
-	-fx-min-height: 50;
-	-fx-max-height: 50;
-	-fx-background-color: #FDFDFD;
+	-fx-min-height: 60;
+	-fx-max-height: 60;
+	-fx-background-radius: 0 0 10 0;
 	-fx-border-color: #FDFDFD #858585 #858585 #FDFDFD;
 	-fx-border-weight: 0 1 1 0;
-	-fx-border-radius: 0 0 5 0;
+	-fx-border-radius: 0 0 10 0;	
 }
 
 .toolbar Button{
-	-fx-padding: 0;
-	-fx-background-color: transparent;
-	-fx-border-color: transparent;
-	-fx-padding: 10,0,10,0;
-	-fx-font-weight: bold;
+	-fx-padding: 10,0,10,10;
+	-fx-border-weight: 2;
+	-fx-min-width:  50;
+	-fx-min-height: 50;
+	-fx-max-width:  50;
+	-fx-max-height: 50;
+	-fx-background-color: red;
+	-fx-background-radius: 100;
+	-fx-border-radius: 100;
 }
 
 .toolbar Button:hover{	
-	-fx-border-color: #858585 #858585 #FDFDFD #858585;
-	-fx-border-weight: 1;
-	-fx-border-radius: 5 5 0 0;
-	-fx-background-color: #FDFDFD;	 
+	/*-fx-border-color: #858585 #858585 #858585 #858585;
+	-fx-border-weight: 2;
+	-fx-border-radius: 100;
+	-fx-background-color: #FDFDFD;*/
 }
 
 .top-titlebar {
@@ -44,6 +48,8 @@
 .statusbar{
 	-fx-min-height: 25;
 	-fx-max-height: 25;
+	-fx-border-weight: 2;
+	-fx-border-color: #858585 #FDFDFD #FDFDFD #FDFDFD;
 }
 
 .titleText{
@@ -115,44 +121,57 @@
 
 /*TOOLBAR*/
 .toolbar-icon {
-	
-	
-}
-
-.toolbar-icon-back {
-	-fx-text-fill: radial-gradient(radius 100%, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
-}
-
-.toolbar-icon-exit {
-	-fx-text-fill: radial-gradient(radius 100%, rgba(255,214,94,1) 0%, rgba(254,191,4,1) 100%);
-}
-
-.toolbar-icon-cancel {
-	-fx-text-fill: radial-gradient(radius 100%, rgba(255,48,25,1) 0%, rgba(207,4,4,1) 100%);
-}
-
-.toolbar-icon-save {
+	-fx-text-fill: #FFF;
 	
 }
 
-.toolbar-icon-search {
-	-fx-text-fill: radial-gradient(radius 100%, rgba(44,83,158,1) 0%, rgba(44,83,158,1) 100%);
+.toolbar-btn-back {
+	-fx-background-color: radial-gradient(radius 100%, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+	-fx-border-color: green;
 }
 
-.toolbar-icon-print {
-	
+.toolbar-btn-exit {
+	-fx-background-color: radial-gradient(radius 100%, rgba(255,214,94,1) 0%, rgba(254,191,4,1) 100%);
+	-fx-border-color: #EF9815;
+}
+
+.toolbar-btn-cancel {
+	-fx-background-color: radial-gradient(radius 100%, rgba(255,48,25,1) 0%, rgba(207,4,4,1) 100%);
+	-fx-border-color: #C60017;
+}
+
+.toolbar-btn-save {
+	-fx-background-color: radial-gradient(radius 100%, rgba(76,76,76,1) 0%, rgba(19,19,19,1) 100%);
+	-fx-border-color: #000;
 	
 }
 
-.toolbar-icon-info {
-	-fx-text-fill: radial-gradient(radius 100%, rgba(30,87,153,1) 0%, rgba(41,137,216,1) 50%);
+.toolbar-btn-search {
+	-fx-background-color: radial-gradient(radius 100%, rgba(44,83,158,1) 0%, rgba(44,83,158,1) 100%);
+	-fx-border-color: #030044;
 }
 
-.toolbar-icon-logout {
-	
-	
+.toolbar-btn-print {
+	-fx-background-color: radial-gradient(radius 100%, rgba(181,189,200,1) 0%, rgba(40,52,59,1) 100%);
+	-fx-border-color: #28343b;	
 }
 
+.toolbar-btn-info {
+	-fx-background-color: radial-gradient(radius 100%, rgba(30,87,153,1) 0%, rgba(41,137,216,1) 50%);
+	-fx-border-color: #030044;
+}
+
+.toolbar-btn-logout {
+	-fx-background-color: radial-gradient(radius 100%, rgba(240,183,161,1) 0%, rgba(191,110,78,1) 100%);
+	-fx-border-color: #28343b;	
+}
+
+.text-field-request {
+	-fx-effect: dropshadow(gaussian,red,10,0.0,0,0);
+	-fx-effect: innershadow(gaussian,red,5,0.0,0,0);
+	-fx-border-color: red;
+	-fx-border-radius: 5;
+}
 
 
 

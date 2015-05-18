@@ -13,6 +13,9 @@ public class Application extends Connection{
 	private String appSource;
 	private String leftPane;
 	private String rightPane;
+	private int idCategory;
+	private String catDescription;
+	private String catIcon;
 	
 	public Application(){
 		
@@ -27,24 +30,29 @@ public class Application extends Connection{
 		
 		try{
 			
-			super.openConnection();			
-			String sql = "SELECT COUNT(*) " +
-							"FROM APPLICATIONS INNER JOIN PROFILE_APPLICATION " +
-							"WHERE APPLICATIONS.ID_APPLICATION = PROFILE_APPLICATION.APPLICATION " +
-							  "AND PROFILE_APPLICATION.PROFILE = " + idProfile + " ;";	
+			super.openConnection();
+			
+			String sql = "SELECT COUNT(*) " +								
+						  "FROM APPLICATIONS AS A, CATEGORY_APPLICATIONS AS B, PROFILE_APPLICATION AS C " +
+						  "WHERE A.ID_CATEGORY    = B.ID_CATEGORY " +
+						    "AND A.ID_APPLICATION = C.APPLICATION "+
+						    "AND C.PROFILE        = " + idProfile + " ;";
+			
 			rs = super.executeSelect(sql);			
 			while(rs.next()){
 				count = rs.getInt(1);				
 			}
-			//rs.close();	
 			
 			apps = new Application[count];			
 			rs = null;
 			
-			sql = "SELECT ID_APPLICATION, APPLICATION_NAME, TITLE, DESCRIPTION, SOURCE, LEFT_PANE, RIGHT_PANE " +
-							"FROM APPLICATIONS INNER JOIN PROFILE_APPLICATION " +
-			  				"WHERE APPLICATIONS.ID_APPLICATION  = PROFILE_APPLICATION.APPLICATION " +
-			  				  "AND PROFILE_APPLICATION.PROFILE  = " + idProfile + "; ";
+			sql = "SELECT A.ID_APPLICATION, A.APPLICATION_NAME, A.TITLE, A.DESCRIPTION, A.SOURCE, A.LEFT_PANE, A.RIGHT_PANE, " + 
+			        	 "B.ID_CATEGORY, B.ICON, B.DESCRIPTION " +
+			       "FROM APPLICATIONS AS A, CATEGORY_APPLICATIONS AS B, PROFILE_APPLICATION AS C " +
+			       "WHERE A.ID_CATEGORY    = B.ID_CATEGORY " +
+			   	 	 "AND A.ID_APPLICATION = C.APPLICATION "+
+			   	 	 "AND C.PROFILE        = " + idProfile + " " +
+			   	 	 "ORDER BY B.POS ASC, A.POS ASC;";
 			
 			rs = super.executeSelect(sql);		
 			int i = 0;
@@ -58,6 +66,9 @@ public class Application extends Connection{
 				apps[i].setAppSource(rs.getString(5));
 				apps[i].setLeftPane(rs.getString(6));
 				apps[i].setRightPane(rs.getString(7));
+				apps[i].setIdCategory(rs.getInt(8));
+				apps[i].setCatIcon(rs.getString(9));
+				apps[i].setCatDescription(rs.getString(10));
 				i++;
 				
 			}
@@ -158,6 +169,30 @@ public class Application extends Connection{
 
 	public void setRightPane(String rightPane) {
 		this.rightPane = rightPane;
+	}
+
+	public int getIdCategory() {
+		return idCategory;
+	}
+
+	public void setIdCategory(int idCategory) {
+		this.idCategory = idCategory;
+	}
+
+	public String getCatDescription() {
+		return catDescription;
+	}
+
+	public void setCatDescription(String catDescription) {
+		this.catDescription = catDescription;
+	}
+
+	public String getCatIcon() {
+		return catIcon;
+	}
+
+	public void setCatIcon(String catIcon) {
+		this.catIcon = catIcon;
 	}
 
 }
