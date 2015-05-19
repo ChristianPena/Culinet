@@ -1,1 +1,7 @@
-/Culinet/bin/*
+bin
+bin/
+bin/*
+bin/**
+*/bin
+*/bin/*
+*/bin/**

@@ -18,12 +18,12 @@ public class Culinet extends Application{
 		
 		Scene scene = new Scene(root);
 		
-		stage.setTitle("CULINET: Ingreso al sistema");
+		stage.setTitle("CULINET: Sistema de Gestión de Restaurante");
 		scene.getStylesheets()
 			 .add(this.getClass().getResource("/culinet/app/util/css/culinetStyle.css")
 			 .toExternalForm());
 		stage.setScene(scene);
-		stage.initStyle(StageStyle.UNDECORATED);
+		stage.initStyle(StageStyle.UNDECORATED);   
 		stage.setMinHeight(320);
 		stage.setMinWidth(600);
 		stage.setMaxHeight(320);
